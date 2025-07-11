@@ -36,7 +36,7 @@ export default function StickyNavbar() {
             <GiHamburgerMenu />
           </button>
         </div>
-        <ul className="hidden md:flex gap-6 text-gray-700 font-bold dark:text-gray-300">
+        <ul className="hidden md:flex gap-6 text-gray-700 font-bold dark:text-gray-300 items-center">
           <li>
             <a href="#home" className="hover:text-blue-500">
               Home
