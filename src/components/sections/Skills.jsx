@@ -13,8 +13,8 @@ import {
 } from "react-icons/di";
 import { FaConfluence } from "react-icons/fa6";
 import { SiConfluence, SiPostman, SiSpringboot } from "react-icons/si";
-import Skill from "./Skill";
 import { useTranslation } from "react-i18next";
+import Skill from "../ui/Skill";
 
 export default function Skills() {
   const { t } = useTranslation();

@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import StickyNavbar from "./Navbar";
-import Contacts from "./components/ui/Contacts";
-import Footer from "./components/ui/Footer";
-import Hero from "./components/ui/Hero";
-import Jobs from "./components/ui/Jobs";
-import Skills from "./components/ui/Skills";
-import Studies from "./components/ui/Studies";
+import Studies from "./components/sections/Studies";
 import useThemeStore from "./js/themeStore";
 import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
+import Hero from "./components/sections/Hero";
+import Contacts from "./components/sections/Contacts";
+import Footer from "./components/sections/Footer";
+import Jobs from "./components/sections/Jobs";
+import Skills from "./components/sections/Skills";
+import Curriculum from "./components/Curriculum";
+import { Routes, Route, Outlet } from "react-router";
 
 function App() {
   const { darkMode, setDarkMode } = useThemeStore();
@@ -27,19 +29,16 @@ function App() {
           style={{
             scaleX: scrollYProgress,
             position: "fixed",
-            top: 50,
+            top: 65,
             left: 0,
             right: 0,
-            height: 20,
+            height: 10,
             originX: 0,
             backgroundColor: "#3b82f6",
+            zIndex: 50,
           }}
         ></motion.div>
-        <Hero />
-        <Skills />
-        <Jobs />
-        <Studies />
-        <Contacts />
+        <Outlet />
         <Footer />
       </div>
     </>

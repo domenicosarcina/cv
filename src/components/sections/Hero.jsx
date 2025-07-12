@@ -1,8 +1,9 @@
 import heroImage from "@/assets/heroNew.png";
-import RotatingText from "./RoatingText";
+import RotatingText from "../ui/RoatingText";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import ScatterName from "../ui/ScatterName";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -64,11 +65,8 @@ export default function Hero() {
       >
         <h1 className="text-4xl md:text-6xl font-extrabold text-blue-700 dark:text-blue-300 mb-2 drop-shadow">
           {t("heroTitle")}{" "}
-          <motion.span
-            className="text-blue-500 dark:text-blue-400"
-            whileHover={{ scale: 1.05 }}
-          >
-            {t("heroName")}
+          <motion.span className="text-blue-500 dark:text-blue-400">
+            <ScatterName text={t("heroName")} />
           </motion.span>
         </h1>
 

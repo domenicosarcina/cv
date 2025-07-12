@@ -59,5 +59,20 @@
   "skillsMenu": "Skills",
   "jobsMenu": "Work Experience",
   "studiesMenu": "Education",
-  "contactMenu": "Contact"
+  "contactMenu": "Contact",
+  "projectsMenu": "Projects",
+  "weatherAppTitle": "Weather App",
+  "weatherAppDescription": "A complete weather application",
+  "spotifyAppTitle": "Spotify Playlist Manager",
+  "spotifyAppDescription": "Manage your Spotify playlists",
+  "weatherSearchPlaceholder": "Search city...",
+  "weatherFeelsLike": "Feels like",
+  "weatherSearchButton": "Search",
+  "weatherPrevisionTitle": "7-Day Forecast",
+  "weatherLoading": "Loading weather...",
+  "weatherError": "Error loading weather data. Please try again later.",
+  "oadFitnessTitle": "OAD Fitness",
+  "oadFitnessDescription": "A management platform for OAD Fitness",
+  "thisSiteTitle": "This Site",
+  "thisSiteDescription": "A personal website built with React, Tailwind CSS, and other modern technologies."
 }
