@@ -4,6 +4,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ScatterName from "../ui/ScatterName";
+import { SiReaddotcv } from "react-icons/si";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -53,6 +54,12 @@ export default function Hero() {
           </SocialIcon>
           <SocialIcon href="mailto:domenicosarcina562@gmail.com" label="Email">
             <FaEnvelope />
+          </SocialIcon>
+          <SocialIcon
+            href="https://drive.google.com/file/d/15xHaquXkHRSz3bzUtXklZXanDsazJTVO/view?usp=sharing"
+            label="Email"
+          >
+            <SiReaddotcv />
           </SocialIcon>
         </motion.div>
       </motion.div>

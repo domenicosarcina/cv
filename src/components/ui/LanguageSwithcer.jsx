@@ -36,7 +36,7 @@ export function LanguageSwitcher() {
         </svg>
       </button>
       {open && (
-        <div className="absolute left-0 mt-2 w-14 bg-white dark:bg-blue-900 rounded shadow-lg z-10">
+        <div className="absolute left-0 mt-2 w-14 bg-white dark:bg-blue-900 rounded shadow-lg z-50">
           {languages.map((lang) => (
             <button
               key={lang.code}
