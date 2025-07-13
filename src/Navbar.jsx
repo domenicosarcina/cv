@@ -40,27 +40,27 @@ export default function StickyNavbar() {
         </div>
         <ul className="hidden md:flex gap-6 text-gray-700 font-bold dark:text-gray-300 items-center">
           <li>
-            <a href="/#home" className="hover:text-blue-500">
+            <a href="/cv/#home" className="hover:text-blue-500">
               Home
             </a>
           </li>
           <li>
-            <a href="/#skills" className="hover:text-blue-500">
+            <a href="/cv/#skills" className="hover:text-blue-500">
               {t("skillsMenu")}
             </a>
           </li>
           <li>
-            <a href="/#work" className="hover:text-blue-500">
+            <a href="/cv/#work" className="hover:text-blue-500">
               {t("jobsMenu")}
             </a>
           </li>
           <li>
-            <a href="/#study" className="hover:text-blue-500">
+            <a href="/cv/#study" className="hover:text-blue-500">
               {t("studiesMenu")}
             </a>
           </li>
           <li>
-            <a href="/#contact" className="hover:text-blue-500">
+            <a href="/cv/#contact" className="hover:text-blue-500">
               {t("contactMenu")}
             </a>
           </li>
@@ -89,7 +89,7 @@ export default function StickyNavbar() {
         >
           <li>
             <a
-              href="/#home"
+              href="/cv/#home"
               className="hover:text-blue-500"
               onClick={() => setOpen(false)}
             >
@@ -98,7 +98,7 @@ export default function StickyNavbar() {
           </li>
           <li>
             <a
-              href="/#skills"
+              href="/cv/#skills"
               className="hover:text-blue-500"
               onClick={() => setOpen(false)}
             >
@@ -107,7 +107,7 @@ export default function StickyNavbar() {
           </li>
           <li>
             <a
-              href="/#work"
+              href="/cv/#work"
               className="hover:text-blue-500"
               onClick={() => setOpen(false)}
             >
@@ -116,7 +116,7 @@ export default function StickyNavbar() {
           </li>
           <li>
             <a
-              href="/#study"
+              href="/cv/#study"
               className="hover:text-blue-500"
               onClick={() => setOpen(false)}
             >
@@ -125,7 +125,7 @@ export default function StickyNavbar() {
           </li>
           <li>
             <a
-              href="/#contact"
+              href="/cv/#contact"
               className="hover:text-blue-500"
               onClick={() => setOpen(false)}
             >
