@@ -151,16 +151,16 @@ export default function Jobs() {
       icons: [<DiReact />, <SiReactquery />, <SiAxios />],
       href: "/weather-app",
     },
-    {
-      id: 2,
-      title: t("spotifyAppTitle"),
-      className:
-        "bg-gradient-to-br from-green-200 via-emerald-300 to-green-400 dark:from-green-700 dark:via-emerald-800 dark:to-green-900 rounded-2xl shadow-xl p-6 text-white w-full max-w-sm",
-      img: spotify,
-      description: t("spotifyAppDescription"),
-      icons: [<DiReact />, <SiReactquery />, <SiAxios />, <SiRedux />],
-      href: "/",
-    },
+    // {
+    //   id: 2,
+    //   title: t("spotifyAppTitle"),
+    //   className:
+    //     "bg-gradient-to-br from-green-200 via-emerald-300 to-green-400 dark:from-green-700 dark:via-emerald-800 dark:to-green-900 rounded-2xl shadow-xl p-6 text-white w-full max-w-sm",
+    //   img: spotify,
+    //   description: t("spotifyAppDescription"),
+    //   icons: [<DiReact />, <SiReactquery />, <SiAxios />, <SiRedux />],
+    //   href: "/",
+    // },
     {
       id: 3,
       title: t("oadFitnessTitle"),
