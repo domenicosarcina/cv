@@ -1,4 +1,4 @@
-import heroImage from "@/assets/heroNew.png";
+import heroImage from "@/assets/heroReal.png";
 import RotatingText from "../ui/RoatingText";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
