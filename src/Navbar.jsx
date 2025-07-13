@@ -15,7 +15,7 @@ export default function StickyNavbar() {
     <div className="sticky top-0 z-50 bg-white shadow-md dark:bg-gray-800 transition-colors duration-300">
       <nav className="w-full max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-xl font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
-          <a href="/#home" className="hover:text-blue-500">
+          <a href="/cv/#home" className="hover:text-blue-500">
             DS
           </a>
           <Weather />
