@@ -145,7 +145,7 @@ export default function Contacts() {
             <div className="hover:scale-110 transition duration-300">
               <a
                 className="text-blue-500 "
-                href="/cv.pdf"
+                href="https://drive.google.com/file/d/1iRxkVG9RWzP8VklHeKfU6tFGAJMoSO8i/view"
                 download
                 target="_blank"
               >
