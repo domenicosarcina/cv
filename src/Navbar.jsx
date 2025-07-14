@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import useThemeStore from "./js/themeStore";
-import { Moon, Sun } from "lucide-react";
+import { ChevronDown, Moon, Sun } from "lucide-react";
 import { LanguageSwitcher } from "./components/ui/LanguageSwithcer";
 import { useTranslation } from "react-i18next";
 import Weather from "./components/ui/Weather";
 import { Link, useLocation } from "react-router-dom";
+import LoginButton from "./components/ui/LoginButton";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "./js/firebase";
 
 export default function StickyNavbar() {
   const [open, setOpen] = useState(false);
@@ -13,6 +16,15 @@ export default function StickyNavbar() {
   const { t } = useTranslation();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const [user, setUser] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsub;
+  }, []);
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
@@ -23,7 +35,7 @@ export default function StickyNavbar() {
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md dark:bg-gray-800 transition-colors duration-300">
-      <nav className="w-full max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="w-full max-w-9xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-xl font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
           <Link
             to="/"
@@ -49,6 +61,23 @@ export default function StickyNavbar() {
             )}
           </button>
           <LanguageSwitcher />
+          {/* {!user && <LoginButton />} */}
+          {/* {user && (
+            <div className="flex items-center gap-2">
+              <img
+                src={user.photoURL}
+                alt="avatar"
+                className="w-8 h-8 rounded-full"
+              />
+              <span>{user.displayName}</span>
+              <button
+                onClick={() => signOut(auth)}
+                className="ml-2 text-red-500 underline"
+              >
+                Logout
+              </button>
+            </div>
+          )} */}
           <button
             className="text-3xl text-blue-600 dark:text-blue-400 hover:text-blue-500"
             onClick={() => setOpen(!open)}
@@ -133,6 +162,43 @@ export default function StickyNavbar() {
           <li>
             <LanguageSwitcher />
           </li>
+          {!user && (
+            <li>
+              <LoginButton />
+            </li>
+          )}
+          {user && (
+            <li className="relative">
+              <button
+                onClick={() => setOpenDropdown((prev) => !prev)}
+                className="flex items-center gap-2 text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+              >
+                <img
+                  src={user.photoURL}
+                  alt="avatar"
+                  className="w-6 h-6 rounded-full object-cover"
+                />
+                {user.displayName.split(" ")[0]}
+                <ChevronDown size={16} />
+              </button>
+
+              {openDropdown && (
+                <ul className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-md z-50">
+                  <li>
+                    <button
+                      onClick={() => {
+                        signOut(auth);
+                        setOpenDropdown(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-gray-700 hover:rounded-xl text-red-600 dark:text-red-400"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </li>
+          )}
         </ul>
       </nav>
 
@@ -210,6 +276,19 @@ export default function StickyNavbar() {
                   {t("contactMenu")}
                 </Link>
               </li>
+              {!user && <LoginButton />}
+              {user && (
+                <div className="mt-4 flex items-center justify-center flex-col">
+                  <li className="flex items-center justify-center">
+                    Ciao {user.displayName.split(" ")[0]} 👋
+                  </li>
+                  <li>
+                    <p className="text-red-600" onClick={() => signOut()}>
+                      Logout
+                    </p>
+                  </li>
+                </div>
+              )}
             </>
           )}
           <li>

@@ -73,7 +73,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl font-extrabold text-blue-700 dark:text-blue-300 mb-2 drop-shadow">
           {t("heroTitle")}{" "}
           <motion.span className="text-blue-500 dark:text-blue-400">
-            <ScatterName text={t("heroName")} />
+            <p>{t("heroName")}</p>
           </motion.span>
         </h1>
 
