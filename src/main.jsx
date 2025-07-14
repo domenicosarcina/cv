@@ -24,7 +24,7 @@ const router = createBrowserRouter(
     </Route>
   ),
   {
-    basename: "/cv",
+    basename: "/",
   }
 );
 
