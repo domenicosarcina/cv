@@ -4,6 +4,7 @@ import contactMe from "@/assets/contactMe.png";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 export default function Contacts() {
   const {
@@ -117,42 +118,42 @@ export default function Contacts() {
               className="w-64 h-auto mb-6 rounded-lg hover:scale-110 transition duration-300"
             />
             <div className="flex gap-4 justify-center">
-              <a
-                href="mailto:domenicosarcina@gmail.com"
+              <Link
+                to="mailto:domenicosarcina@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-700 text-3xl dark:text-blue-400 hover:dark:text-blue-300"
               >
                 <FaEnvelope />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/domenico-sarcina/"
+              </Link>
+              <Link
+                to="https://www.linkedin.com/in/domenico-sarcina/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-700 text-3xl dark:text-blue-400 hover:dark:text-blue-300"
               >
                 <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/domenicosarcina"
+              </Link>
+              <Link
+                to="https://github.com/domenicosarcina"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-700 text-3xl dark:text-blue-400 hover:dark:text-blue-300"
               >
                 <FaGithub />
-              </a>
+              </Link>
             </div>
             <div className="hover:scale-110 transition duration-300">
-              <a
+              <Link
                 className="text-blue-500 "
-                href="https://drive.google.com/file/d/15xHaquXkHRSz3bzUtXklZXanDsazJTVO/view?usp=sharing"
+                to="https://drive.google.com/file/d/15xHaquXkHRSz3bzUtXklZXanDsazJTVO/view?usp=sharing"
                 download
                 target="_blank"
               >
                 <h4 className="font-semibold mt-4 text-blue-500 text-xl dark:text-blue-400 hover:dark:text-blue-300">
                   {t("downloadResume")}
                 </h4>
-              </a>
+              </Link>
             </div>
           </div>
         </form>
