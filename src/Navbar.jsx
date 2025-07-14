@@ -5,6 +5,7 @@ import { Moon, Sun } from "lucide-react";
 import { LanguageSwitcher } from "./components/ui/LanguageSwithcer";
 import { useTranslation } from "react-i18next";
 import Weather from "./components/ui/Weather";
+import { Link } from "react-router";
 
 export default function StickyNavbar() {
   const [open, setOpen] = useState(false);
@@ -15,9 +16,18 @@ export default function StickyNavbar() {
     <div className="sticky top-0 z-50 bg-white shadow-md dark:bg-gray-800 transition-colors duration-300">
       <nav className="w-full max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-xl font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
-          <a href="/#home" className="hover:text-blue-500">
+          <Link
+            to="/"
+            className="hover:text-blue-500"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("home")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             DS
-          </a>
+          </Link>
           <Weather />
         </div>
         <div className="md:hidden flex items-center gap-4">
@@ -40,29 +50,74 @@ export default function StickyNavbar() {
         </div>
         <ul className="hidden md:flex gap-6 text-gray-700 font-bold dark:text-gray-300 items-center">
           <li>
-            <a href="/#home" className="hover:text-blue-500">
+            <Link
+              to="/"
+              className="hover:text-blue-500"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#skills" className="hover:text-blue-500">
+            <Link
+              to="/"
+              className="hover:text-blue-500"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("skills")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               {t("skillsMenu")}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#work" className="hover:text-blue-500">
+            <Link
+              to="/"
+              className="hover:text-blue-500"
+              onClick={(e) => {
+                e.preventDefault(); // evita il cambio pagina
+                document
+                  .getElementById("work")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               {t("jobsMenu")}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#study" className="hover:text-blue-500">
+            <Link
+              to="/"
+              className="hover:text-blue-500"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("study")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               {t("studiesMenu")}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#contact" className="hover:text-blue-500">
+            <Link
+              to="/"
+              className="hover:text-blue-500"
+              onClick={(e) => {
+                e.preventDefault(); // evita il cambio pagina
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               {t("contactMenu")}
-            </a>
+            </Link>
           </li>
           <li className="flex items-center">
             <button onClick={toggleDarkMode} className="">
@@ -88,49 +143,79 @@ export default function StickyNavbar() {
           style={{ willChange: "opacity, transform" }}
         >
           <li>
-            <a
-              href="/#home"
+            <Link
+              to="/"
               className="hover:text-blue-500"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/#skills"
+            <Link
+              to="/"
               className="hover:text-blue-500"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                document
+                  .getElementById("skills")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               {t("skillsMenu")}
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/#work"
+            <Link
+              to="/ork"
               className="hover:text-blue-500"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                document
+                  .getElementById("work")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               {t("jobsMenu")}
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/#study"
+            <Link
+              to="/#study"
               className="hover:text-blue-500"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                document
+                  .getElementById("study")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               {t("studiesMenu")}
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/#contact"
+            <Link
+              to="/"
               className="hover:text-blue-500"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                e.preventDefault(); // evita il cambio pagina
+                setOpen(false);
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               {t("contactMenu")}
-            </a>
+            </Link>
           </li>
           <li>
             <Weather mobile={true} />
