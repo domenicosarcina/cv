@@ -22,10 +22,7 @@ const router = createBrowserRouter(
       <Route index element={<Curriculum />} />
       <Route path="weather-app" element={<WeatherApp />} />
     </Route>
-  ),
-  {
-    basename: "/",
-  }
+  )
 );
 
 createRoot(document.getElementById("root")).render(
