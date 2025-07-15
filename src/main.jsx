@@ -13,6 +13,8 @@ import {
 
 import Curriculum from "./components/Curriculum.jsx";
 import WeatherApp from "./components/WeatherApp.jsx";
+import Profile from "./components/Profile.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,14 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index element={<Curriculum />} />
       <Route path="weather-app" element={<WeatherApp />} />
+      <Route
+        path="profile"
+        element={
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        }
+      />
     </Route>
   )
 );

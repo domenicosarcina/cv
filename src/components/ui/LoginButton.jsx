@@ -1,14 +1,15 @@
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../../js/firebase";
 import { FcGoogle } from "react-icons/fc";
+import toast from "react-hot-toast";
 
 export default function LoginButton() {
   const login = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
-      console.log("User:", result.user);
+      toast.success(`Benvenuto, ${result.user.displayName.split(" ")[0]}! 👋`);
     } catch (error) {
-      console.error("Login failed:", error);
+      toast.error("Login fallito. Riprova");
     }
   };
 

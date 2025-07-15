@@ -17,7 +17,7 @@ export function LanguageSwitcher() {
   return (
     <div className="relative">
       <button
-        className="px-3 py-1 rounded bg-blue-100 dark:bg-blue-400 text-blue-700 dark:text-blue-800 font-semibold flex items-center gap-2"
+        className="px-3 py-1 rounded bg-blue-100 dark:bg-blue-400 text-blue-700 dark:text-blue-800 font-semibold flex items-center justify-center gap-2"
         onClick={() => setOpen((v) => !v)}
       >
         {current.label}
