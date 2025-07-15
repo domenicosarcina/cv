@@ -74,5 +74,17 @@
   "oadFitnessTitle": "OAD Fitness",
   "oadFitnessDescription": "Plataforma de gestión para OAD Fitness",
   "thisSiteTitle": "Este Sitio",
-  "thisSiteDescription": "Un sitio web personal creado con React, Tailwind CSS y otras tecnologías modernas."
+  "thisSiteDescription": "Un sitio web personal creado con React, Tailwind CSS y otras tecnologías modernas.",
+  "loginGoogle": "Iniciar sesión con Google",
+  "welcome": "Bienvenido",
+  "hi": "Hola",
+  "profile": "Perfil",
+  "nameProfile": "Nombre",
+  "emailProfile": "Correo electrónico",
+  "logout": "Cerrar sesión",
+  "runnerString": "Corredor",
+  "gymString": "Apasionado del gimnasio",
+  "basketballString": "Jugador de baloncesto",
+  "currentlyIn": "Actualmente en",
+  "willingToRelocate": "Dispuesto a mudarse"
 }

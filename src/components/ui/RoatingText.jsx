@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-
-const texts = [
-  "Full Stack Developer",
-  "Basketball Player",
-  "Gym Addicted",
-  "Runner",
-];
+import { useTranslation } from "react-i18next";
 
 export default function RotatingText() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const { t } = useTranslation();
+
+  const texts = [
+    "Full Stack Developer",
+    t("basketballString"),
+    t("gymString"),
+    t("runnerString"),
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {

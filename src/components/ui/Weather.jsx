@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCurrentWeather } from "../../js/weather";
+import { useTranslation } from "react-i18next";
 
 export default function Weather({ mobile = false }) {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["weather", "Barletta"],
     queryFn: () => getCurrentWeather("Barletta"),
   });
+  const { t } = useTranslation();
 
   if (isLoading) return <div>Caricamento meteo...</div>;
   if (isError) return <div>Errore: {error.message}</div>;
@@ -24,7 +26,7 @@ export default function Weather({ mobile = false }) {
         ${mobile ? "justify-center mt-4" : "hidden lg:flex"}`}
       >
         <p className="mr-2">
-          Currently in {data.location.name}, {data.location.country}
+          {t("currentlyIn")} {data.location.name}, {data.location.country}
         </p>
         <p>{data.current.temp_c}°C</p>
         <img
@@ -33,7 +35,7 @@ export default function Weather({ mobile = false }) {
           alt="Weather icon"
         />
       </div>
-      <p className="ml-2">Willing to relocate 🌍</p>
+      <p className="ml-2">{t("willingToRelocate")} 🌍</p>
     </div>
   );
 }

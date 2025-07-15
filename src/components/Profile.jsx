@@ -3,9 +3,11 @@ import useUserStore from "../js/userStore";
 import { signOut } from "firebase/auth";
 import { auth } from "../js/firebase";
 import { LogOut } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Profile() {
   const { user } = useUserStore();
+  const { t } = useTranslation();
 
   if (!user) return null;
 
@@ -28,14 +30,18 @@ export default function Profile() {
 
         <div className="mt-6 flex flex-col gap-3">
           <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
-            <p className="text-sm text-gray-600 dark:text-gray-300">Nome</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              {t("nameProfile")}
+            </p>
             <p className="text-lg font-semibold text-blue-800 dark:text-blue-200">
               {user.displayName}
             </p>
           </div>
 
           <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
-            <p className="text-sm text-gray-600 dark:text-gray-300">Email</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              {t("emailProfile")}
+            </p>
             <p className="text-lg font-semibold text-blue-800 dark:text-blue-200">
               {user.email}
             </p>
@@ -47,7 +53,7 @@ export default function Profile() {
           className="mt-6 w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-xl transition-all"
         >
           <LogOut size={20} />
-          Logout
+          {t("logout")}
         </button>
       </div>
     </div>

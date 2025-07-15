@@ -178,7 +178,7 @@ export default function StickyNavbar() {
                       }}
                       className="w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-xl text-gray-600 dark:text-gray-200"
                     >
-                      Profilo
+                      {t("profile")}
                     </button>
                   </li>
                   <li>
@@ -189,7 +189,7 @@ export default function StickyNavbar() {
                       }}
                       className="w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-xl text-red-600 dark:text-red-400"
                     >
-                      Logout
+                      {t("logout")}
                     </button>
                   </li>
                 </ul>
@@ -279,7 +279,7 @@ export default function StickyNavbar() {
           {user && (
             <div className="mt-4 flex items-center justify-center flex-col">
               <li className="flex items-center justify-center">
-                Ciao {user.displayName.split(" ")[0]} 👋
+                {t("hi")} {user.displayName.split(" ")[0]} 👋
               </li>
               <li className="mt-2">
                 <p
@@ -290,7 +290,7 @@ export default function StickyNavbar() {
                     setOpen(false);
                   }}
                 >
-                  Profilo
+                  {t("profile")}
                 </p>
               </li>
               <li>
@@ -301,7 +301,7 @@ export default function StickyNavbar() {
                     setOpen(false);
                   }}
                 >
-                  Logout
+                  {t("logout")}
                 </p>
               </li>
             </div>
