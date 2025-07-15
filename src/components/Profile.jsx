@@ -4,6 +4,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../js/firebase";
 import { LogOut } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import * as motion from "motion/react-client";
 
 export default function Profile() {
   const { user } = useUserStore();
@@ -13,7 +14,15 @@ export default function Profile() {
 
   return (
     <div className="min-h-[calc(100vh-145px)] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-all">
-      <div className="w-full max-w-md p-6 m-2 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-blue-200 dark:border-gray-700">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          scale: { type: "spring", visualDuration: 0.5, bounce: 0.4 },
+        }}
+        className="w-full max-w-md p-6 m-2 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-blue-200 dark:border-gray-700"
+      >
         <div className="flex flex-col items-center text-center">
           <img
             src={user.photoURL}
@@ -55,7 +64,7 @@ export default function Profile() {
           <LogOut size={20} />
           {t("logout")}
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }
